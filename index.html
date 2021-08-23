@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav id="nav-bar">
+      <header id="navIntroHeader">
+        <h1>Javascript Basics</h1>
+      </header>
+      <div class="navHeaders">
+        <a href="#Learning_Javascript_Basics" class="navLinks">Basics</a>
+      </div>
+      <div class="navHeaders">
+        <a href="#Variables" class="navLinks">Variables</a>
+      </div>
+      <div class="navHeaders">
+        <a href="#Scope" class="navLinks">Scope</a>
+      </div>
+      <div class="navHeaders">
+        <a href="#Arrays" class="navLinks">Arrays</a>
+      </div>
+      <div class="navHeaders">
+        <a href="#Objects" class="navLinks">Objects</a>
+      </div>
+      <div class="navHeaders"><a href="#Loops" class="navLinks">Loops</a></div>
+      <div class="navHeaders">
+        <a href="#Functions" class="navLinks">Functions</a>
+      </div>
+      <div class="navHeaders">
+        <a href="#Resources" class="navLinks">Resources</a>
+      </div>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="Learning_Javascript_Basics">
+        <header>
+          <h1>Learning Javascript Basics</h1>
+        </header>
+        <p class="sectionParagraph">
+          In this document, we'll be looking through a few of the basic concepts
+          of javascript and how to apply them. It is my wish to try and make
+          this a more understandable method of conveying information.
+        </p>
+        <p class="sectionParagraph">
+          While daunting at first, javascript is a very flexible and widely used
+          programming language. Originally just for the web and used in browsers
+          on websites, javascript can now be used to do many things, including
+          games, apps, and a lot more than a single source.
+        </p>
+        <p class="sectionParagraph">
+          Here's a list of some of the things we'll be going over in the
+          documentation
+        </p>
+        <ul>
+          <li>Variables</li>
+          <li>Scope</li>
+          <li>Objects</li>
+          <li>Arrays</li>
+          <li>Loops</li>
+          <li>Functions</li>
+        </ul>
+      </section>
+      <section class="main-section" id="Variables">
+        <header>
+          <h1>Variables</h1>
+        </header>
+        <div id="variableSection">
+          <p>Let's talk about variables, and what they are used for.</p>
+          <p>
+            In javascript's current state of variables, there are three main
+            types:
+          </p>
+          <ol>
+            <li>var (variable)</li>
+            <li>let (let)</li>
+            <li>const (constant)</li>
+          </ol>
+          <p>
+            So an analogy that I like to use when describing variables is
+            treasure chests.
+          </p>
+          <h3>Var</h3>
+          <p>
+            Pretend that a treasure chest without a lock or key is considered
+            var. As soon as a variable is declared with var, any code anywhere
+            can change it's value, or in this case, open it up and take out
+            anything and put anything they want to store int he chest, and can
+            do it from anywhere in the code.
+          </p>
+          <h3>Let</h3>
+          <p>
+            The difference between var and let is scope. I'll explain scope in
+            the next section, but consider a treasure chest with let is like a
+            chest laid on a land mass that can be viewed and defined by anyone
+            anywhere else, but since it's not on the same land you're standing
+            on, you can't actually take anything out or put anything into it.
+            But if it's on the same landmass as you, you can also
+          </p>
+          <h3>Const</h3>
+          <p>
+            When Const is the treasure chest, you have to imagine it's a see
+            through chest with a lock and no key. Once it's been shut and
+            locked, the key disappears, and unless you destroy the treasure
+            chest and everything inside of it, it's not able to be changed, no
+            matter where it is, or its scope.
+          </p>
+        </div>
+      </section>
+      <section class="main-section">
+        <header>
+          <h1>Scope</h1>
+        </header>
+        <div id="scopeArea">
+           <p>Scope is another way of saying where is this in the code? How can this item affect other things, or can it? And can other things affect this item, or can they?</p>
+           <p>Using the example below, let's look at a declaration of a variable named bob</p>
+           <code class = "codeSpots">
+               var bob = 2
+           </code>
+           <p>bob is now declared with var. So it can be affected by anything in any aspect of code. For example:</p>
+           <code class = "codeSpots">
+               bob = 5
+           </code>
+           <p>Above, that simple line of code changes bob from 2 to 5, because var is covered by global scope, meaning it can affect and be affected from any spot on the code!</p>
+           <p>Now if we talk about let, on the other hand, it is bound by something called block scope.</p>
+           <code class = "codeSpots">
+               function changeBob() {
+                   bob = 15
+               };
+               changeBob()
+           </code>
+           <p>Above, bob would NOT change, because anything inside of {} is called a block of code, and since let is block scoped, you cannot change a variable declared by let outside of {} with code inside of {}, whereas you can with var. Another difference between let and var is that a var inside of {} can be seen outside of a {}, but a let inside a {} can't be seen outside of a {} and vise versa.</p>
+           <p>And finally, we have const</p>
+           <code class = "codeSpots">
+               const bob = 15; bob = 1
+           </code>
+           <p>The above code would give you an error because a const is immutable (not changable) and now has to be deleted to be used again. Just like let, const inside a {} can't be seen outside a {} and vise versa. </p>
+        </div>
+      </section>
+      <section class="main-section"></section>
+      <section class="main-section"></section>
+    </main>
+  </body>
+</html>

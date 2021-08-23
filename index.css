@@ -1,0 +1,76 @@
+body {
+    display: flex;
+    overflow-x: hidden;
+}
+
+#nav-bar {
+    width: 18%;
+    border-right: 1px solid black;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+#main-doc {
+    position: absolute;
+    top: 0;
+    width: 80%;
+    height: 100vh;
+    right: 0;
+    margin: auto;
+}
+
+#navIntroHeader {
+    position: relative;
+    left: 4%;
+    top: 0;
+    font-size: 2rem;
+}
+
+.sectionParagraph {
+    position: relative;
+    left: 2%;
+    width: 80%;
+}
+
+.navHeaders {
+    height: 6%;
+    position: relative;
+    left: 8%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.navLinks {
+    
+    color: black
+}
+
+
+#variableSection, #scopeArea {
+    position: relative;
+    width: 70%;
+    left: 2%;
+}
+
+#varCodeSpotHolder {
+    background-color: gray;
+    color: white;
+    width: 10%;
+    height: 14vh;
+    display: flex;
+    align-items: center;
+}
+
+#varCodeSpot {
+    position: relative;
+    left: 4%;
+}
+
+.codeSpots {
+    background-color: gray;
+    color: white;
+    padding: 1%;
+}
