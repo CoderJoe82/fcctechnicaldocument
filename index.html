@@ -110,7 +110,7 @@
           </p>
         </div>
       </section>
-      <section class="main-section">
+      <section class="main-section" id = "Scope">
         <header>
           <h1>Scope</h1>
         </header>
@@ -138,10 +138,169 @@
                const bob = 15; bob = 1
            </code>
            <p>The above code would give you an error because a const is immutable (not changable) and now has to be deleted to be used again. Just like let, const inside a {} can't be seen outside a {} and vise versa. </p>
+           <p>Just as a final reminder!</p>
+           <p>Block scope!</p>
+           <code class = "codeSpots">
+               {const bob = 2}
+           </code>
+           <p>Global scope!</p>
+           <code class = "codeSpots">
+                const bob = 2
+           </code>
         </div>
       </section>
-      <section class="main-section"></section>
-      <section class="main-section"></section>
+      <section class="main-section" id = "Arrays">
+            <header>
+                <h1>Arrays</h1>
+            </header>
+            <h3>Important note about Arrays:</h3>
+            <p>Soon we'll talk about objects. For purposes of when you're trying to learn later coding methods, keep in mind that arrays ARE objects, but they are a specific object that is designed to what they do, and not like a standard object</p>
+            <h3>Data Storage</h3>
+            <p>Amongst many things, arrays are ways to store data. Like variables are ways to store instances of data, arrays are objects that store multiple forms of data, including declared variables. Here's an example:</p>
+            <code class = "codeSpots">
+                const bob = 12; const jimmy = 14
+            </code>
+            <p>Now, if you were to take those to and make an array to hold boty bob and jimmy called, let's say, car, for example...:</p>
+            <code class = "codeSpots">
+                const car = [bob, jimmy]
+            </code>
+            <p>So as you can see, declaring an array is similar to declaring a variable, but when you put [] there, it tells javascript you're declaring an array. Arrays can be left empty as well, but for the case of this basic explanation, let's just use our car.</p>
+            <p>You might have noticed I declared an array with const and not var, or let. There is a reason for this. You remember how we discussed that const cannot be changed? Well since we used const we cannot change WHAT IT IS that we declared, but since an array is an object, we can still modify what's INSIDE of the array. But if we would have used let or var, which let you change the data they are declared with, you can declare it like this:</p>
+            <code class = "codeSpots">
+                let car = [bob, jimmy]; car = 4
+            </code>
+            <p>The above could cause some serious problems! Since let allows us to change the type of thing we're declaring, by using a lie of code 'car = 4', now you've changed what car is. It's not an integer, 4, instead of an array. If you have code later on relying on what's inside of car, it will break your task because now car is 4 instead of the value of bob and jimmy, 12, and 14.</p>
+            <h3>Index</h3>
+            <p>An important part of accessing the data you've stored in an array is index. So let's say we want to make a NEW variable, and make it equal to bob from our car array. How would we do that? Well, remember that car is [bob, jimmy], which means that the first item is bob. When we are trying to grab an item from an array, we have to use the same brackets we did when we created our array, []. So once we use those, then we have to tell it which number item (it's index) we're getting. BUT THAT'S NOT ALL! Arrays work on indexed counting, which starts with 0, not 1. So in order to get bob's value out of car, we do this:</p>
+            <code class = "codeSpots">
+                const bobbyAge = car[0]
+            </code>
+            <p>By doing the above, we now have bobbyAge set to 12, because car[0] is grabbing the first item out of car, which is 12! We could do the same for jimmy by car[1] instead of 0!</p>
+      </section>
+      <section class="main-section" id = "Objects">
+          <header>
+              <h1>Objects</h1>
+          </header>
+          <h3>Data Storage</h3>
+          <p>Much like Arrays, Objects also store data. They can store data in a different way, but also more organized than an array as well, in the event you need such. Let me show you an example:</p>
+          <pre>
+              const car = {
+                  make: 'ford',
+                  model: 'mustang',
+                  color: 'red',
+                  year: 2018,
+                  doors: 2,
+              }
+          </pre>
+          <p>Much like arrays require [], objects require {}</p>
+          <h3>Key/Value</h3>
+          <p>Objects, as you can see, don't just say {make, model, color, year, doors} like an array. This both makes it more understandable, but also showcases a way that instead of declaring a bunch of variables and putting their names inside an array, like with bob and jimmy in the array example in the previous section, you can both declare and define what bob and jimmy are inside an object at once. So instead of having:</p>
+          <pre>
+              const bob = 12;
+              const jimmy = 14;
+              const car = [bob, jimmy]
+          </pre>
+          <p>Instead, we can do this:</p>
+          <pre>
+              const car = {
+                  bob: 12,
+                  jimmy: 14
+              }
+          </pre>
+          <p>This way we don't need to declare, then also store it in the array, and we can just have it all inside the object.</p>
+          <p>Inside of the car object above, bob and jimmy are considered keys, and 12 and 14 are considered values. You declare the key, and then after a : describe its value. You can do much more with object and arrays both than what is shown here, but I encourage you to explore that on your own.</p>
+          <h3>Accessing Object data</h3>
+          <p>You can do a similar method to what you did with arrays, using the [], but by default, objects don't recongize indexed numbers. Instead, you use what's called index notation. The other way is called dot notation. I'll show you examples of each.</p>
+          <p>Index notation</p>
+          <code class = "codeSpots">
+              car["bob"]
+          </code>
+          <p>Dot notation</p>
+          <code class = "codeSpots">
+              car.bob
+          </code>
+      </section>
+      <section class="main-section" id = "Loops">
+          <header>
+              <h1>Loops</h1>
+          </header>
+          <p>Loops are an important method in javascript. There are a few, but for these basic lessons, I'll start with 2. The while loop, and the for loop. Both have a time when they are useful over the other, but experimenting with them is always good.</p>
+          <h3>For loop</h3>
+          <p>A for loop is something you can kind of use in english language. For our example, lets start with a variable and a number</p>
+          <code class = "codeSpots">
+              const maxNumber = 10
+          </code>
+          <p>So now we have a max number declared, and can use that as an anchor to tell our loops when to stop.</p>
+          <p>With that in mind, let's show you the basic code syntax for a for loop so you can get an idea of what's happening.</p>
+          <pre>
+              for (let applesIHave = 0; applesIHave < maxNumber; applesIHave++) {
+                console.log(applesIHave)
+              }
+          </pre>
+          <p>Let's break this down. </p>
+          <p>for is a keyword that lets javascript know you're going to use a for loop. I wrote applesIHave to help make this more english'y. Normally, you would say index, or i, instead there, so it's more concise. However, it's not necessary to name it something other than i if you know what you're doing. But for the sake of learning, let's use it so we know it's representing our apples. So the breakdown goes like this, from left to right, on the top line of the for loop block.</p>
+          <p>for**for keyword to explain it's a loop** (let applesIHave = 0 **basically saying for the amount of apples I have....** ; apples I have < maxNumber; **while the amount of apples I have are less than maxNumber(which is 10 that we declared above)... ** applesIHave++) ** make applesIHave go up by one. In Javascript ++ is a mathematical expression that takes whatever number you have and increases it by one, for reference.</p>
+          <p>There's a great tool you can do to help you map this out visibly in case that's how you need to learn as well. Thinking about the for loop, consider all the parts just described. Also, so you know, the console is in your browser, and any time console.log() happens, it will print results to your console. A wonderful learning/testing/debugging tool you should make liberal use of.</p>
+          <pre>
+              applesIHave is 0: Is applesIHave less than maxNumber?(10) Yes, so print it(0) to the console: now increase it by 1(1)
+              applesIHave is 1: Is applesIHave less than maxNumber?(10) Yes, so print it(1) to the console: now increase it by 1(2)
+              applesIHave is 2: Is applesIHave less than maxNumber?(10) Yes, so print it(2) to the console: now increase it by 1(3)
+              applesIHave is 3: Is applesIHave less than maxNumber?(10) Yes, so print it(3) to the console: now increase it by 1(4)
+              applesIHave is 4: Is applesIHave less than maxNumber?(10) Yes, so print it(4) to the console: now increase it by 1(5)
+              applesIHave is 5: Is applesIHave less than maxNumber?(10) Yes, so print it(5) to the console: now increase it by 1(6)
+              applesIHave is 6: Is applesIHave less than maxNumber?(10) Yes, so print it(6) to the console: now increase it by 1(7)
+              applesIHave is 7: Is applesIHave less than maxNumber?(10) Yes, so print it(7) to the console: now increase it by 1(8)
+              applesIHave is 8: Is applesIHave less than maxNumber?(10) Yes, so pring it(8) to the console: now increase it by 1(9)
+              applesIHave is 9: Is applesIHave less than maxNumber?(10) Yes, so pring it(8) to the console: now increase it by 1(10)
+              applesIHave is 10: Is applesIHave less than maxNumber?(10) No, so do not print it, and exit the function.
+          </pre>
+          <p>When the condition of your loop is met, and a condition is met as 'false', it will exit completely and stop. So it's important to remember the way you write things is important. Let me show you an example of where this can go wrong.</p>
+          <pre>
+              for (let applesIHave = 9; applesIHave < maxNumber; i--) {
+                  console.log(applesIHave)
+              }
+          </pre>
+          <p>In the for loop above, remember syntax and what it means. I have 9 apples. is 9 < maxNumber?(which is 10) so yes. Then subtract 1 from 9 (-- is just like ++, but for subtract instead of add). Can you see a possible problem here? Just in case you don't just yet, that's okay! But remember, the condition that the loop is waiting to change to false before the loop can stop is that applesIHave < 10. But since you started applesIHave at 9 and told it to subtract by 1 each time the loop happens. This will ensure that the number will never be greater than 10, and the function will never stop. This is traditionally called an endless loop. This will freeze up your browser/app/etc., and you will have to close your browser and reopen it again.</p>
+          <h3>
+              While loops
+          </h3>
+          <p>While loops are a lot like for loops, but written much shorter:</p>
+          <pre>
+              const bob = 2;
+              while (bob < 10) {
+                  console.log(bob)
+              }
+          </pre>
+          <p>As you can see, this would do much the same thing as the for loop example above, but written differently. These are just as susceptible as the for loop to become an endless loop, though, and freeze all your browsers/apps/etc..</p>
+      </section>
+      <section class="main-section" id = "Functions">
+          <header>
+              <h1>Functions</h1>
+          </header>
+          <p>While variables are important as they give us the building blocks of what to operate with when trying to build something, functions would be akin to the tools that we use to put stuff together. Functions give us the ability to use many different parts to give an end result that we often see as a user on a web page or app.</p>
+          <p>There are a few different ways you can write functions in javascript, and that is in part to different versions being made and released over the years. However, I'll show you the way that I find easiest and fastest.</p>
+          <pre>
+              const multiplyByTwo = () => {
+                  console.log(4 * 2)
+              }
+          </pre>
+          <p>In programming languages, your functions are set and ready, but not firing off until you 'call' them. So in the above example, the function multiplyByTwo is taking a simple function in form of mathematical operation of 4 * 2. As we know, that will result in 8, but to make it print to the console, you will have to call it like this:</p>
+          <code class = "codeSpots">
+              multiplyByTwo();
+          </code>
+          <p>() like that after a function name is what initializes a function and runs the code we've written inside.</p>
+      </section>
+      <section class="main-section" id = "Resources">
+          <header>
+              <h1>Resources</h1>
+          </header>
+          <p>While there are a lot of resources out there to help you learn, I will give a list of what I think are great starting points!</p>
+          <ul>
+              <li>Codecademy</li>
+              <li>Free Code Camp</li>
+              <li>Youtube(Lots of good channels)</li>
+          </ul>
+      </section>
     </main>
   </body>
 </html>

@@ -67,10 +67,16 @@ body {
 #varCodeSpot {
     position: relative;
     left: 4%;
+    display: block;
+    white-space: pre-wrap
 }
 
 .codeSpots {
     background-color: gray;
     color: white;
     padding: 1%;
+}
+
+#Resources {
+    padding-bottom: 50px;
 }
